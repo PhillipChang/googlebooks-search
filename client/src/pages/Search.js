@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
 import SearchInput from "../components/SearchInput";
+import Container from "../components/Container";
+import Jumbotron from "../components/Jumbotron";
+import CardBtn from "../components/CardBtn";
 import API from "../components/utils/API";
 
 
@@ -46,6 +49,32 @@ render () {
     return (
         <div>
             <Navbar/>
+            <Jumbotron />
+            <Container>
+                <h3> Book Search </h3>
+                <p> Book </p>
+                <SearchInput
+                    value={this.state.title}
+                    onChange={this.handleInputChange}
+                    name="title"
+                    placeholder="Title (required)"
+                    />
+                    <button onClick={this.handleFormSubmit}>Search</button>
+                </Container>
+            <Container>
+                {this.state.googleBooks.map(book => (
+                    <Card
+                    key={book.id}
+                    title={book.volumeInfo.title}
+                    thumbnail={book.volumeInfo.imageLinks.thumbnail}
+                    author={book.volumeInfo.authors}
+                    synopsis={book.volumeInfo.description}
+                    link={book.volumeInfo.infoLink}
+                    handleDelete={this.handleDelete}
+                    />
+                ))}
+                </Container>
             </div> 
-    )
+    );
+}
 }
