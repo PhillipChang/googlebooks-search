@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Card from "../components/Card";
+import API from "../components/utils/API";
 
 
 class Search extends Component {
