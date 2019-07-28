@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from "../components/Card";
+import Navbar from "../components/Navbar";
 import API from "../components/utils/API";
 
 
@@ -43,6 +44,7 @@ class Search extends Component {
 render () {
     return (
         <div>
+            <Navbar/>
             </div> 
     )
 }
