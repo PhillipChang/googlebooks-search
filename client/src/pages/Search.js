@@ -36,14 +36,24 @@ class Search extends Component {
     }
   };
 
-        // API.saveBook({
-      //   title: this.state.title,
-      //   author: this.state.author,
-      //   synopsis: this.state.synopsis
-      // })
-      //   .then(res => this.loadBooks())
-      //   .catch(err => console.log(err));
+  saveBook = (id) => {
+        API.saveBook({
+        id:this.state.id,
+        title: this.state.title,
+        author: this.state.author,
+        synopsis: this.state.synopsis,
+        thumbnail:this.state.thumbnail,
+        link:this.state.link
+        })
+        .then(res => this.loadBooks())
+        .catch(err => console.log(err));
+    };
 
+    deleteBook = id => {
+        API.deleteBook(id)
+          .then(res => this.loadBooks())
+          .catch(err => console.log(err));
+      };
 
 render () {
     return (
@@ -70,7 +80,8 @@ render () {
                     author={book.volumeInfo.authors}
                     synopsis={book.volumeInfo.description}
                     link={book.volumeInfo.infoLink}
-                    handleDelete={this.handleDelete}
+                    deleteBook={this.deleteBook}
+                    saveBook={this.saveBook}
                     />
                 ))}
                 </Container>

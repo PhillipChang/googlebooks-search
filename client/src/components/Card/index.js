@@ -11,8 +11,9 @@ function Card(props) {
             <div className="card-body">
 
                 <p className="card-text">{props.synopsis}</p>
-               <CardBtn link={props.link}/>
-               <CardBtn handleDelete = {props.handleDelete}/>
+               <CardBtn/>{props.link} View
+               <CardBtn onClick={() =>props.saveBook(props.id)}/>Save
+               <CardBtn onClick={() =>props.deleteBook(props.id)}/> Delete
             </div>
         </div>
     )
