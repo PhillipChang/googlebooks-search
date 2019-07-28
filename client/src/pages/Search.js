@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
+import SearchInput from "../components/SearchInput";
 import API from "../components/utils/API";
 
 
