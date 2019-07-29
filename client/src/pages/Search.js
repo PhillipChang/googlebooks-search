@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
-import SearchInput from "../components/SearchInput";
+import { SearchInput, SubBtn } from "../components/SearchInput";
 import Container from "../components/Container";
 import Jumbotron from "../components/Jumbotron";
-import CardBtn from "../components/CardBtn";
-import API from "../components/utils/API";
+import API from "../utils/API";
 
 
 class Search extends Component {
     state = {
-        books: [],
         googleBooks: [],
         title: "",
         author: "",
@@ -24,8 +22,9 @@ class Search extends Component {
         });
       };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
+  handleFormSubmit = (title) => {
+    console.log("we got here")
+    console.log()
     if (this.state.title) {
       API.getGoogleBooks(this.state.title)
         .then(res => {
@@ -62,14 +61,17 @@ render () {
             <Jumbotron />
             <Container>
                 <h3> Book Search </h3>
-                <p> Book </p>
+                <hr/>
                 <SearchInput
                     value={this.state.title}
                     onChange={this.handleInputChange}
                     name="title"
                     placeholder="Title (required)"
-                    />
-                    <button onClick={this.handleFormSubmit}>Search</button>
+                    /> <br/>
+                    <SubBtn
+                      onClick={this.handleFormSubmit}
+                    /><br/>
+                    <p/>
                 </Container>
             <Container>
                 {this.state.googleBooks.map(book => (
@@ -89,3 +91,5 @@ render () {
     );
 }
 }
+
+export default Search;

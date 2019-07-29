@@ -5,8 +5,14 @@
 .btn{
     top:0%;
     right:0%;
-    
+    background-color:lightblue;
+    border-radius: 50%;
 }
+
+.btn:hover{
+    background-color:slategrey;
+}
+
 .card-text{
    align-content: center;
 }
