@@ -35,7 +35,7 @@ class Search extends Component {
     }
   };
 
-  saveBook = (id) => {
+  saveBook = (bookData) => {
         API.saveBook({
         id:this.state.id,
         title: this.state.title,
@@ -77,8 +77,9 @@ render () {
                 {this.state.googleBooks.map(book => (
                     <Card
                     key={book.id}
+                    id={book.id}
                     title={book.volumeInfo.title}
-                    thumbnail={book.volumeInfo.imageLinks.thumbnail}
+                    thumbnail={book.volumeInfo.imageLinks.thumbnail} 
                     author={book.volumeInfo.authors}
                     synopsis={book.volumeInfo.description}
                     link={book.volumeInfo.infoLink}

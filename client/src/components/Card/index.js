@@ -5,19 +5,18 @@ import "./style.css"
 function Card(props) {
     return (
         <div className="card" >
-            <h5 className="card-title">{props.title}</h5>
-            <h4>Written by:&nbsp;{props.author}</h4>
+            <h3 className="card-title">{props.title}</h3>
+            <h5>Written by:&nbsp;{props.author}</h5>
             <img src={props.thumbnail} className="card-img-top" alt={props.title} />
             <div className="card-body">
 
                 <p className="card-text">{props.synopsis}</p>
-               <a href={props.link}><button> View</button></a>
-               <button onClick={() =>props.saveBook(props.id)}>Save</button>
-               <button onClick={() =>props.deleteBook(props.id)}> Delete </button>
+               <a href={props.link}><button className="btn"> View</button></a>
+               <button className="btn" onClick={() =>props.saveBook((props.id,props.title,props.author,props.thumbnail,props.link,props.synopsis))}>Save</button>
+               <button className="btn" onClick={() =>props.deleteBook(props.id)}> Delete </button>
             </div>
         </div>
     )
 }
-
 
 export default Card;
