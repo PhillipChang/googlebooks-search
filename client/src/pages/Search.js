@@ -38,7 +38,15 @@ class Search extends Component {
 
   saveBook = (bookData) => {
     console.log(bookData)
-        API.saveBook(bookData)
+    let booksData = {
+      title: bookData.title,
+      author: bookData.author,
+      synopsis:bookData.synopsis,
+      link:bookData.link,
+      thumbnail:bookData.thumbnail,
+    }
+    console.log("booksdata", booksData);
+        API.saveBook(booksData)
         .catch(err => console.log(err));
     };
 
@@ -66,13 +74,11 @@ render () {
                 {this.state.googleBooks.map(book => (
                     <Card
                     key={book.id}
-                    id={book.id}
                     title={book.volumeInfo.title}
-                    thumbnail={book.volumeInfo.imageLinks.thumbnail} 
                     author={book.volumeInfo.authors}
                     synopsis={book.volumeInfo.description}
                     link={book.volumeInfo.infoLink}
-                    deleteBook={this.deleteBook}
+                    thumbnail={book.volumeInfo.imageLinks.thumbnail} 
                     saveBook={this.saveBook}
                     />
                 ))}

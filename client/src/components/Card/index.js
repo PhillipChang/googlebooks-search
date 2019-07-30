@@ -12,7 +12,6 @@ export function Card(props) {
                 <p className="card-text">{props.synopsis}</p>
                <a href={props.link}><button className="btn"> View</button></a>
                <button className="btn" onClick={() =>props.saveBook({...props})}>Save</button>
-               {/* <button className="btn" onClick={() =>props.saveBook((props.id,props.title,props.author,props.thumbnail,props.link,props.synopsis))}>Save</button> */}
                <button className="btn" onClick={() =>props.deleteBook(props.id)}> Delete </button>
             </div>
         </div>
