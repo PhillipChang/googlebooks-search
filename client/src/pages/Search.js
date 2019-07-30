@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Card from "../components/Card";
+import {Card} from "../components/Card";
 import Navbar from "../components/Navbar";
 import { SearchInput, SubBtn } from "../components/SearchInput";
 import Container from "../components/Container";
@@ -35,24 +35,13 @@ class Search extends Component {
     }
   };
 
+
   saveBook = (bookData) => {
-        API.saveBook({
-        id:this.state.id,
-        title: this.state.title,
-        author: this.state.author,
-        synopsis: this.state.synopsis,
-        thumbnail:this.state.thumbnail,
-        link:this.state.link
-        })
-        .then(res => this.loadBooks())
+    console.log(bookData)
+        API.saveBook(bookData)
         .catch(err => console.log(err));
     };
 
-    deleteBook = id => {
-        API.deleteBook(id)
-          .then(res => this.loadBooks())
-          .catch(err => console.log(err));
-      };
 
 render () {
     return (

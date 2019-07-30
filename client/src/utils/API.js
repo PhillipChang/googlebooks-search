@@ -11,6 +11,7 @@ export default {
   },
   // Saves a book to the database
   saveBook: function(bookData) {
+    console.log("we hit client",bookData)
     return axios.post("/api/books", bookData);
   },
   // Retrieve search results from Google Books
