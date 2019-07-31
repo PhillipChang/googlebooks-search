@@ -56,13 +56,13 @@ loadBooks = (booksData) => {
     };
 
 
+
 render () {
     return (
         <div>
             <Navbar/>
             <Jumbotron />
             <Container>
-                <h3> Book Search </h3>
                 <hr/>
                 <SearchInput
                     value={this.state.title}
@@ -74,8 +74,6 @@ render () {
                       onClick={this.handleFormSubmit}
                     /><br/>
                     <p/>
-                </Container>
-            <Container>
                 {this.state.googleBooks.map(book => (
                     <Card
                     key={book.id}

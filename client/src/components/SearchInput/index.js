@@ -1,5 +1,5 @@
 import React from "react"
-
+import './style.css'
 
 export function SearchInput(props) {
     return (
@@ -17,6 +17,6 @@ export function SearchInput(props) {
 
   export function SubBtn(props){
   return (
-     <button className="btn" {...props}>{props.children}Search</button>
+     <button className="btn" id="search-btn" {...props}>{props.children}Search</button>
   );
 }

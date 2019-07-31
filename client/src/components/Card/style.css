@@ -1,3 +1,15 @@
+.card {
+    padding:2%;
+    margin-bottom:1%;
+    background:beige;
+    opacity:0.75;
+    width:50%;
+    margin-left:25%;
+}
+
+.card:hover {
+    opacity:1;
+}
 .card-img-top{
     width:21%;
     padding:3%;
@@ -7,7 +19,7 @@
 .btn{
     top:0%;
     right:0%;
-    background-color:lightblue;
+    background-color:slategrey;
     border-radius: 50%;
     margin-left:1%;
 }

@@ -34,7 +34,6 @@ componentDidMount(){
         return (
             <div>
                 <Navbar />
-                <Container>
                 <JumbotronSave/>
                 {(this.state.savedBooks.length) ?
                 <ul>
@@ -53,7 +52,6 @@ componentDidMount(){
                 ))}
                 </ul>
                 : <h2> You have no books saved!</h2>}
-                </Container>
             </div>
         );
     }
