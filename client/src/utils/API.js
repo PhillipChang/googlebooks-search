@@ -3,6 +3,7 @@ import axios from "axios";
 export default {
   // Gets all books
   getBooks: function() {
+    console.log("we hit client")
     return axios.get("/api/books");
   },
   // Deletes the book with the given id

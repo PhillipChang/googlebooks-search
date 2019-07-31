@@ -8,25 +8,24 @@ import API from "../utils/API";
 class Saved extends Component {
     state = {
         savedBooks: [],
-        title: "",
-        author: "",
-        synopsis: ""
       };
 
-// componentDidMount(){
-//         API.getBooks = () => {
-//             .then(res => {
-//             this.setState({savedBooks: res.data})
-//             })   
-//         }   
-//     };
+componentDidMount(){
+    this.loadBooks(); 
+    };
 
-loadBooks = () => {
-    API.getBooks = (res) => {
-        this.setState({savedBooks: res.data});
-    }
+  loadBooks = () => {
+    API.getBooks()
+      .then(res => {
+        console.log("this is res", res);
+      this.setState({ savedBooks: res.data })
+      console.log("this is saved", this.state.savedBooks)
+      })
+      .catch(err => console.log(err));
 }; 
-    deleteBook = id => {
+
+
+    deleteBook = (id) => {
         API.deleteBook(id)
           .then(res => this.loadBooks())
           .catch(err => console.log(err));
@@ -39,13 +38,13 @@ loadBooks = () => {
                 <Container>
                 {this.state.savedBooks.map(book => (
                 <CardSaved 
-                key={book.id}
-                id={book.id}
-                title={book.volumeInfo.title} 
-                thumbnail={book.volumeInfo.imageLinks.thumbnail}
-                author={book.volumeInfo.authors}
-                synopsis={book.volumeInfo.description}
-                link={book.volumeInfo.infoLink}
+                key={book._id}
+                id={book._id}
+                title={book.title} 
+                thumbnail={book.thumbnail}
+                author={book.author}
+                synopsis={book.synopsis}
+                link={book.link}
                 deleteBook={this.deleteBook}
                 />
                 ))}
