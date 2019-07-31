@@ -5,7 +5,7 @@ import "./style.css"
 
 
 
-function Jumbotron(props) {
+export function Jumbotron(props) {
     return (
 
         <Container>
@@ -20,5 +20,15 @@ function Jumbotron(props) {
     )
 }
 
+export function JumbotronSave(){
+    return (
+        <div className="jumbotron jumbotron-fluid">
+                <div className="container">
+                    <h1 className="display-4 title" >Saved Books</h1>
+                    <p className="lead title "> Your Saved Books All In One Place</p>
+                </div>
+            </div>  
+    )
 
-export default Jumbotron;
+}
+

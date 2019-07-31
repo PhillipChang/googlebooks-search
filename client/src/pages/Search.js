@@ -3,7 +3,7 @@ import {Card} from "../components/Card";
 import Navbar from "../components/Navbar";
 import { SearchInput, SubBtn } from "../components/SearchInput";
 import Container from "../components/Container";
-import Jumbotron from "../components/Jumbotron";
+import {Jumbotron} from "../components/Jumbotron";
 import API from "../utils/API";
 
 
@@ -35,6 +35,10 @@ class Search extends Component {
     }
   };
 
+loadBooks = (booksData) => {
+  this.setState({googleBooks: this.state.googleBooks.filter(book => book.volumeInfo.infoLink != booksData.link)})
+  .catch(err => console.log(err));
+};
 
   saveBook = (bookData) => {
     console.log(bookData)
@@ -47,6 +51,7 @@ class Search extends Component {
     }
     console.log("booksdata", booksData);
         API.saveBook(booksData)
+        .then(res => this.loadBooks(booksData))
         .catch(err => console.log(err));
     };
 

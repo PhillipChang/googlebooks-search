@@ -3,6 +3,7 @@ import {CardSaved} from "../components/Card";
 import Navbar from "../components/Navbar";
 import Container from "../components/Container";
 import API from "../utils/API";
+import {JumbotronSave} from "../components/Jumbotron";
 
 
 class Saved extends Component {
@@ -34,6 +35,7 @@ componentDidMount(){
             <div>
                 <Navbar />
                 <Container>
+                <JumbotronSave/>
                 {(this.state.savedBooks.length) ?
                 <ul>
                 {this.state.savedBooks.map((book,i) => (
