@@ -17,9 +17,7 @@ componentDidMount(){
   loadBooks = () => {
     API.getBooks()
       .then(res => {
-        console.log("this is res", res);
       this.setState({ savedBooks: res.data })
-      console.log("this is saved", this.state.savedBooks)
       })
       .catch(err => console.log(err));
 }; 
@@ -36,10 +34,13 @@ componentDidMount(){
             <div>
                 <Navbar />
                 <Container>
-                {this.state.savedBooks.map(book => (
+                {(this.state.savedBooks.length) ?
+                <ul>
+                {this.state.savedBooks.map((book,i) => (
                 <CardSaved 
                 key={book._id}
                 id={book._id}
+                index={i}
                 title={book.title} 
                 thumbnail={book.thumbnail}
                 author={book.author}
@@ -48,6 +49,8 @@ componentDidMount(){
                 deleteBook={this.deleteBook}
                 />
                 ))}
+                </ul>
+                : <h2> You have no books saved!</h2>}
                 </Container>
             </div>
         );

@@ -14,7 +14,6 @@ module.exports = {
   },
   remove: function(req, res) {
     db.Book
-    // .remove({_id: req.params.id})
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
