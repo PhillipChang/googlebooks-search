@@ -1,3 +1,19 @@
+# GoogleBooks-Search
+
+[Deployed Link](https://googlebooks-search-pc.herokuapp.com/)
+
+### Landing Page
+![Main-Screen](client/public/images/website.jpg)
+
+### Website In Action
+![Main-Screen](client/public/images/website.gif)
+
+## Description
+
+Easily search your favorite books online through the GoogleBooks Search app. The app features a minimalistic design which serves the sole purpose for users to search books. The app is powered by the Google Books API. Like one of the books you searched? Just save it. Like it so much that you want to buy it? Just simply click the view button to see more information on where to purchase. Bored of the book? Just delete it.
+
+GoogleBooks Search, where all your favorite books are easily found.
+
 # Create React Express App
 
 ## About This Boilerplate
@@ -27,3 +43,19 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 ## Deployment (Heroku)
 
 To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+
+# Technologies Used
+
+* React
+* GoogleBooks API
+* HTML
+* CSS
+* Bootstrap
+* JSX
+* Express
+* MongoDB (mLabs)
+* Nodejs
+
+# Author
+
+Phillip Chang
