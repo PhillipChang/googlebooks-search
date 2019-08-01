@@ -36,7 +36,7 @@ class Search extends Component {
   };
 
 loadBooks = (booksData) => {
-  this.setState({googleBooks: this.state.googleBooks.filter(book => book.volumeInfo.infoLink != booksData.link)})
+  this.setState({googleBooks: this.state.googleBooks.filter(book => book.volumeInfo.infoLink !== booksData.link)})
   .catch(err => console.log(err));
 };
 
@@ -74,6 +74,9 @@ render () {
                       onClick={this.handleFormSubmit}
                     /><br/>
                     <p/>
+                    </Container>
+
+                    <ul>
                 {this.state.googleBooks.map(book => (
                     <Card
                     key={book.id}
@@ -84,8 +87,7 @@ render () {
                     thumbnail={book.volumeInfo.imageLinks.thumbnail} 
                     saveBook={this.saveBook}
                     />
-                ))}
-                </Container>
+                ))}</ul>
             </div> 
     );
 }

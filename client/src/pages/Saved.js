@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {CardSaved} from "../components/Card";
 import Navbar from "../components/Navbar";
-import Container from "../components/Container";
 import API from "../utils/API";
 import {JumbotronSave} from "../components/Jumbotron";
 

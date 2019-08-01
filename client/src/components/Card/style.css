@@ -1,9 +1,9 @@
 .card {
     padding:2%;
     margin-bottom:1%;
-    background:beige;
     opacity:0.75;
     width:50%;
+    background:blanchedalmond;
     margin-left:25%;
 }
 
@@ -16,18 +16,27 @@
     margin-bottom:2%;
 }
 
+.card-img-top:hover{
+    width:35%;
+}
+
 .btn{
     top:0%;
     right:0%;
-    background-color:slategrey;
-    border-radius: 50%;
+    border-radius: 75%;
     margin-left:1%;
+    width:12%;
+    border:solid;
+    border:1px;
 }
 
-.btn:hover{
-    background-color:slategrey;
+#view-btn:hover{
+    background-color:brown;
 }
 
+#delete-btn:hover{
+    background-color:red;
+}
 .card-text{
    align-content: center;
 }
